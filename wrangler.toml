@@ -1,0 +1,8 @@
+name = "nl-tax-accountant-dev"
+main = "src/worker.js"
+compatibility_date = "2026-10-01"
+# Bind D1 after creating a development database; do not commit real database IDs.
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "nl-tax-accountant-dev"
+# database_id = "REPLACE_WITH_DEV_DATABASE_ID"
