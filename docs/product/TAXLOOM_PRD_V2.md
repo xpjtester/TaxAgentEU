@@ -1,20 +1,20 @@
-# TaxLoom — Product Requirements Document v2.0
+# European Tax Platform — Product Requirements Document v2.0
 
 Date: 2026-10-11
 Status: development baseline / not legal clearance / not production-ready
 Former project: NL Tax Accountant AI
-Working brand: TaxLoom (subject to trademark and domain verification)
+Brand: TBD — name selection pending trademark, domain and competitor clearance
 Targets: NL, BE, DE, LV, LT, EE, SE, DK, FI, NO
 
 ## 1. Mission
-TaxLoom is an AI-assisted accounting and tax preparation SaaS for European SMEs, sole proprietors, and accounting firms. It uses one auditable accounting core with country-specific tax plugins. AI extracts and suggests; deterministic rules compute; authorized people approve; official channels submit where lawful and technically supported.
+European Tax Platform is an AI-assisted accounting and tax preparation SaaS for European SMEs, sole proprietors, and accounting firms. It uses one auditable accounting core with country-specific tax plugins. AI extracts and suggests; deterministic rules compute; authorized people approve; official channels submit where lawful and technically supported.
 
 The existing repository is an early Dutch prototype. It explicitly lacks authentication, persistence, encryption, tenant isolation and production filing. Do not ingest real customer financial documents before these controls exist.
 
 ## 2. Two portals, one company record
-**TaxLoom Business**: company onboarding, invoices (PDF/image), consent-based read-only email integrations, bank CSV/MT940 import, optional regulated open-banking provider, categorized transactions, matching exceptions, VAT draft, explainable tax estimates, per-filing approval, exports, receipts, and consent revocation.
+**European Tax Platform Business**: company onboarding, invoices (PDF/image), consent-based read-only email integrations, bank CSV/MT940 import, optional regulated open-banking provider, categorized transactions, matching exceptions, VAT draft, explainable tax estimates, per-filing approval, exports, receipts, and consent revocation.
 
-**TaxLoom Pro**: accounting-firm organization, client invitations and engagements, portfolio queue, exception triage, suggested journal adjustments, dual review, filing preparation, request for client authorization, deadline calendar, evidence bundles and audit export.
+**European Tax Platform Pro**: accounting-firm organization, client invitations and engagements, portfolio queue, exception triage, suggested journal adjustments, dual review, filing preparation, request for client authorization, deadline calendar, evidence bundles and audit export.
 
 Both portals use the same backend; neither role can bypass tenant scoping. Engagements require client consent with scope, expiration, and revocation.
 
@@ -130,7 +130,7 @@ packages/auth; packages/db; packages/ledger; packages/tax-core; packages/country
 migrations; fixtures; tests/{unit,integration,e2e,security,contracts}; docs/{product,architecture,compliance}; scripts.
 
 ## 15. Brand migration plan
-New working brand: **TaxLoom**; portals **TaxLoom Business** and **TaxLoom Pro**. Preserve original historical commit history. Update README, package names and UI strings when implementation begins. Do not rename the GitHub repository, domains, OAuth callbacks, integrations or production URLs until trademark/domain review and redirect/deployment plan are complete. No domain availability or trademark exclusivity is asserted.
+Brand selection pending. Temporarily use **European Tax Platform** internally, with **Business Portal** and **Accountant Portal** as descriptive labels; do not publish a brand before clearance. Preserve original historical commit history. Update README, package names and UI strings when implementation begins. Do not rename the GitHub repository, domains, OAuth callbacks, integrations or production URLs until trademark/domain review and redirect/deployment plan are complete. No domain availability or trademark exclusivity is asserted.
 
 ## 16. Definition of done
 Each feature requires migrations, server-side permissions, tests (positive and negative), observability, redaction, data retention plan, user documentation and rollback. Real tax authority submission is never enabled by merely changing a feature flag; connector accreditation/permissions and live integration verification are separate release gates.
