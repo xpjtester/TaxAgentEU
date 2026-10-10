@@ -1,0 +1,25 @@
+name: CI
+on:
+  push:
+    branches: [main, 'docs/**', 'feat/**']
+  pull_request:
+jobs:
+  node-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Unit tests
+        run: npm test
+      - name: Database migration smoke test
+        run: |
+          python3 - <<'PY'
+          import sqlite3, pathlib
+          conn=sqlite3.connect(':memory:')
+          conn.executescript(pathlib.Path('migrations/0001_platform_foundation.sql').read_text())
+          assert conn.execute("select count(*) from jurisdictions").fetchone()[0] == 10
+          assert conn.execute("select filing_capability from jurisdictions where code='NO'").fetchone()[0] == 'DRAFT_ONLY'
+          print('SQLite migration smoke OK')
+          PY
