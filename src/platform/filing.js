@@ -5,7 +5,7 @@ const serialize = value => JSON.stringify(value);
 const hash = value => createHash("sha256").update(serialize(value)).digest("hex");
 function validMoney(value) { return Number.isSafeInteger(value); }
 export function createDraft({companyId,country,taxType,period,totals,ruleVersion,evidenceIds=[]}) {
-  if (!companyId || !taxType || !/^\\d{4}-(0[1-9]|1[0-2])$/.test(period) ||
+  if (!companyId || !taxType || !/^\d{4}-(0[1-9]|1[0-2])$/.test(period) ||
       !ruleVersion || !validMoney(totals?.payableMinor) ||
       !Array.isArray(evidenceIds) || evidenceIds.some(x=>typeof x!=="string")) throw new Error("INVALID_DRAFT");
   jurisdiction(country);
