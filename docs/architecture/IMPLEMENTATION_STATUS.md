@@ -1,4 +1,4 @@
-# Implementation status — European Tax Platform
+# Implementation status — TaxAgentEU
 
 ## Implemented on development branch
 - Ten country manifests, all conservative DRAFT_ONLY.
@@ -24,4 +24,4 @@
 5. Allow demonstration data only until independent privacy/security review.
 
 ## Brand and repository
-Brand is explicitly TBD. Existing repository name stays unchanged until competitor, trademark and domain clearance. Do not market under TaxLoom.
+Product brand selected: TaxAgentEU. Portals: TaxAgentEU Business and TaxAgentEU Pro. Trademark/domain checks remain pending. Existing GitHub repository name is unchanged pending a separate migration and redirect plan.
